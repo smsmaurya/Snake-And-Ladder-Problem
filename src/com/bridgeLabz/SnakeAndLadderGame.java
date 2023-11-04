@@ -35,6 +35,8 @@ public class SnakeAndLadderGame {
 
                 case 2:          // Snakebite situation
                     playerPosition -= rollsDice;
+                    
+                    // if player position is less than 0 then player restart game
                     if(playerPosition<0){
                         playerPosition = 0;
                     }
