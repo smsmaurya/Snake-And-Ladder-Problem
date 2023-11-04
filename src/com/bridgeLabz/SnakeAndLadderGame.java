@@ -6,15 +6,19 @@ public class SnakeAndLadderGame {
 
     public static void main(String[] args) {
 
-        int playerPosition = 0;
-        System.out.println("The starting player position is : "+playerPosition);
+        int playerPosition = 0, countNoOfDiceRolls=0;
 
         // Random random = new Random(); // create object of random class
 
         while (playerPosition<100){
+
+            System.out.println("The player position after "+ countNoOfDiceRolls + " times dice rolls : "+playerPosition);
+            System.out.println();
+
             // player rolls the dice
             // int rollsDice = random.nextInt(6)+1;
             int rollsDice = (int)(Math.random()*10)%6 +1;
+            countNoOfDiceRolls++;
             System.out.println("Player rolls the dice and getting number on dice is : "+rollsDice);
 
             // automatic generate situation to decide next step after rolling dice
@@ -53,5 +57,6 @@ public class SnakeAndLadderGame {
                     break;
             }
         }
+        System.out.println("The player position after "+ countNoOfDiceRolls + " times dice rolls : "+playerPosition);
     }
 }
