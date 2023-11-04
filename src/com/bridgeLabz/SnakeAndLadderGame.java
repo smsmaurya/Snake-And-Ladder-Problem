@@ -21,17 +21,25 @@ public class SnakeAndLadderGame {
             // int situation = random.nextInt(3);
             int situation = (int)(Math.random()*10)%3;
 
-            //
+            // here use switch(), based on situation game will work
             switch (situation){
                 case 0:          // No play situation
                     System.out.println("Player 'no Play' situation.");
                     System.out.println("The current position of player is :"+playerPosition);
                     break;
 
+
                 case 1:          // ladder situation
                     playerPosition += rollsDice;
+
+                    if (playerPosition>100){
+                        // if player position go above 100 than player stay at previous position
+                        playerPosition -= rollsDice;
+                        System.out.println("Player stay at same position : "+playerPosition);
+                    }
                     System.out.println("After ladder situation,\nplayer position is:"+playerPosition);
                     break;
+
 
                 case 2:          // Snakebite situation
                     playerPosition -= rollsDice;
@@ -39,6 +47,7 @@ public class SnakeAndLadderGame {
                     // if player position is less than 0 then player restart game
                     if(playerPosition<0){
                         playerPosition = 0;
+                        System.out.println("Player restart from : "+playerPosition);
                     }
                     System.out.println("After snake bite situation,\nplayer position is :"+playerPosition);
                     break;
